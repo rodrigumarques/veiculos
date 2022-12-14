@@ -1,4 +1,4 @@
-package com.teste.veiculos.domain;
+package com.teste.veiculos.application.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
