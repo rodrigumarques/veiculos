@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1/carros")
+@RequestMapping("/v1/carro")
 public interface CarroAPI {
 
     //CADASTRO DE VEICULOS
