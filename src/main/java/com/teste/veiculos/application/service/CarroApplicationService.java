@@ -17,9 +17,9 @@ public class CarroApplicationService implements CarroService{
 
     @Override
     public CarroResponse criaCarro(CarroRequest carroRequest) {
-        log.info("[INICIA] CarroApplicationService - postCarro");
+        log.info("[INICIA] CarroApplicationService - criaCarro");
         Carro carro = carroRepository.salva(new Carro(carroRequest));
-        log.info("[FINALIZA] CarroApplicationService - postCarro");
+        log.info("[FINALIZA] CarroApplicationService - criaCarro");
         return CarroResponse.builder().idVeiculo(carro.getIdVeiculo()).build();
     }
 }
