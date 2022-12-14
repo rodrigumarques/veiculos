@@ -2,6 +2,8 @@ package com.teste.veiculos.application.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,13 +19,15 @@ public class Carro {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID id;
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String veiculo;
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String marca;
-    @NotBlank
+    @NotNull
     private int ano;
-
+    @NotNull
     private Boolean vendido;
 
     private LocalDateTime created;

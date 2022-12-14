@@ -1,15 +1,19 @@
 package com.teste.veiculos.application.api;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Value;
 
 @Value
 public class CarroRequest {
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String veiculo;
-    @NotBlank
+    @NotNull
+    @NotEmpty
     private String marca;
-    @NotBlank
+    @NotNull
     private int ano;
 
     private Boolean vendido;

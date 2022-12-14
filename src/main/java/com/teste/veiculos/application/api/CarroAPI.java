@@ -1,5 +1,6 @@
 package com.teste.veiculos.application.api;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,5 +11,5 @@ public interface CarroAPI {
     //CADASTRO DE VEICULOS
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    CarroResponse postCarro(@RequestBody CarroRequest carroRequest);
+    CarroResponse postCarro(@Valid @RequestBody CarroRequest carroRequest);
 }
