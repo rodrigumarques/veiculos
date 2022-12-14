@@ -1,7 +1,6 @@
-package com.teste.veiculos.cadastroVeiculos.domain;
+package com.teste.veiculos.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,8 +11,10 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Entity
-public class carros {
+public class Carro {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID id;
     @NotBlank
     private String veiculo;
@@ -27,8 +28,7 @@ public class carros {
     private LocalDateTime created;
     private LocalDateTime updated;
 
-    public carros(UUID id, String veiculo, String marca, int ano, Boolean vendido) {
-        this.id = UUID.randomUUID();
+    public Carro(UUID id, String veiculo, String marca, int ano, Boolean vendido) {
         this.veiculo = veiculo;
         this.marca = marca;
         this.ano = ano;
