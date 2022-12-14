@@ -12,4 +12,7 @@ public interface CarroAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     CarroResponse postCarro(@Valid @RequestBody CarroRequest carroRequest);
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    List<CarroListResponse> getTodosCarros();
 }
