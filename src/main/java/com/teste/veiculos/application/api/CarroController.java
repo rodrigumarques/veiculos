@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -26,6 +27,14 @@ public class CarroController implements CarroAPI{
         List<CarroListResponse> carros = carroService.buscaTodosCarros();
         log.info("[FINALIZA] CarroController - getTodosCarros");
         return carros;
+    }
+
+    @Override
+    public CarroDetalhadoResponse getCarroPorId(UUID idVeiculo) {
+        log.info("[INICIA] CarroController - getCarroPorId");
+        log.info("[IdVeiculo] {}", idVeiculo);
+        log.info("[FINALIZA] CarroController - getCarroPorId");
+        return null;
     }
 
 }

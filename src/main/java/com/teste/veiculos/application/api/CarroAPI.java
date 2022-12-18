@@ -5,17 +5,22 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
+
 //CADASTRO DE VEICULOS
 @RestController
 @RequestMapping("/v1/carro")
 public interface CarroAPI {
-    //POST-Salva Veículo
+    //POST-Salva veículo
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     CarroResponse postCarro(@Valid @RequestBody CarroRequest carroRequest);
-    //GET-Busca Todos Os Veículos
+    //GET-Busca Todos os veículos
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<CarroListResponse> getTodosCarros();
-
+    //GET-Busca por Id do veículo
+    @GetMapping(value = "/{idVeiculo}")
+    @ResponseStatus(code = HttpStatus.OK)
+    CarroDetalhadoResponse getCarroPorId(@PathVariable UUID idVeiculo);
 }
