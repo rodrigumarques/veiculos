@@ -1,5 +1,6 @@
 package com.teste.veiculos.application.service;
 
+import com.teste.veiculos.application.api.CarroListResponse;
 import com.teste.veiculos.application.api.CarroRequest;
 import com.teste.veiculos.application.api.CarroResponse;
 import com.teste.veiculos.application.domain.Carro;
@@ -7,6 +8,8 @@ import com.teste.veiculos.application.repository.CarroRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Log4j2
@@ -21,5 +24,12 @@ public class CarroApplicationService implements CarroService{
         Carro carro = carroRepository.salva(new Carro(carroRequest));
         log.info("[FINALIZA] CarroApplicationService - criaCarro");
         return CarroResponse.builder().idVeiculo(carro.getIdVeiculo()).build();
+    }
+
+    @Override
+    public List<CarroListResponse> buscaTodosCarros() {
+        log.info("[INICIA] CarroApplicationService - buscaTodosCarros");
+        log.info("[FINALIZA] CarroApplicationService - buscaTodosCarros");
+        return null;
     }
 }

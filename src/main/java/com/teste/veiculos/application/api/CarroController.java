@@ -23,8 +23,9 @@ public class CarroController implements CarroAPI{
     @Override
     public List<CarroListResponse> getTodosCarros() {
         log.info("[INICIA] CarroController - getTodosCarros");
+        List<CarroListResponse> carros = carroService.buscaTodosCarros();
         log.info("[FINALIZA] CarroController - getTodosCarros");
-        return null;
+        return carros;
     }
 
 }
