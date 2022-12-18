@@ -33,8 +33,9 @@ public class CarroController implements CarroAPI{
     public CarroDetalhadoResponse getCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroController - getCarroPorId");
         log.info("[IdVeiculo] {}", idVeiculo);
+        CarroDetalhadoResponse carroDetalhado = carroService.buscaCarroPorId(idVeiculo);
         log.info("[FINALIZA] CarroController - getCarroPorId");
-        return null;
+        return carroDetalhado;
     }
 
 }
