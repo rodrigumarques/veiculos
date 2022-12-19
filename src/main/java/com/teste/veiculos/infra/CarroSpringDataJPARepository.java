@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface ClienteSpringDataJPARepository extends JpaRepository<Carro, UUID> {
+public interface CarroSpringDataJPARepository extends JpaRepository<Carro, UUID> {
 }

@@ -48,7 +48,7 @@ public class CarroApplicationService implements CarroService{
     public void deletaCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroApplicationService - deletaCarroPorId");
         Carro carro = carroRepository.buscaCarroPorId(idVeiculo);
-      //  carroRepository.deletaCarro(carro);
+        carroRepository.deletaCarro(carro);
         log.info("[FINALIZA] CarroApplicationService - deletaCarroPorId");
 
     }

@@ -15,12 +15,12 @@ import java.util.UUID;
 @Log4j2
 @RequiredArgsConstructor
 public class CarroInfraRepository implements CarroRepository {
-    private final ClienteSpringDataJPARepository clienteSpringDataJPARepository;
+    private final CarroSpringDataJPARepository carroSpringDataJPARepository;
 
     @Override
     public Carro salva(Carro carro) {
         log.info("[INICIA] CarroInfraRepository - salva");
-        clienteSpringDataJPARepository.save(carro);
+        carroSpringDataJPARepository.save(carro);
         log.info("[FINALIZA] CarroInfraRepository - salva");
         return carro;
     }
@@ -28,7 +28,7 @@ public class CarroInfraRepository implements CarroRepository {
     @Override
     public List<Carro> buscaTodosCarros() {
         log.info("[INICIA] CarroInfraRepository - buscaTodosCarros");
-        List<Carro> todosCarros = clienteSpringDataJPARepository.findAll();
+        List<Carro> todosCarros = carroSpringDataJPARepository.findAll();
         log.info("[FINALIZA] CarroInfraRepository - buscaTodosCarros");
         return todosCarros;
     }
@@ -36,9 +36,16 @@ public class CarroInfraRepository implements CarroRepository {
     @Override
     public Carro buscaCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroInfraRepository - buscaCarroPorId");
-        Carro carro = clienteSpringDataJPARepository.findById(idVeiculo)
+        Carro carro = carroSpringDataJPARepository.findById(idVeiculo)
                 .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Veículo não encontrado!"));
         log.info("[FINALIZA] CarroInfraRepository - buscaCarroPorId");
         return carro;
+    }
+
+    @Override
+    public void deletaCarro(Carro carro) {
+        log.info("[INICIA] CarroInfraRepository - deletaCarro");
+        carroSpringDataJPARepository.delete(carro);
+        log.info("[FINALIZA] CarroInfraRepository - deletaCarro");
     }
 }
