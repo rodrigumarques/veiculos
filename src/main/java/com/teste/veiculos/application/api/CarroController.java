@@ -46,4 +46,11 @@ public class CarroController implements CarroAPI{
         log.info("[FINALIZA] CarroController - deletaCarroPorId");
     }
 
+    @Override
+    public void patchAtualizaVeiculo(UUID idVeiculo, CarroAlteracaoRequest carroAlteracaoRequest) {
+        log.info("[INICIA] CarroController - patchAtualizaVeiculo");
+        log.info("[IdVeiculo] {}", idVeiculo);
+        log.info("[FINALIZA] CarroController - patchAtualizaVeiculo");
+    }
+
 }

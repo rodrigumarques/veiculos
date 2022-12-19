@@ -30,4 +30,9 @@ public interface CarroAPI {
     @DeleteMapping(value = "/{idVeiculo}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaCarroPorId(@PathVariable UUID idVeiculo);
+
+    //PATCH-Atualiza dados do veículo
+    @PatchMapping(value = "/{idVeiculo}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchAtualizaVeiculo(@PathVariable UUID idVeiculo, @Valid @RequestBody CarroAlteracaoRequest carroAlteracaoRequest);
 }
