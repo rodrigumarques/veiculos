@@ -15,12 +15,19 @@ public interface CarroAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
     CarroResponse postCarro(@Valid @RequestBody CarroRequest carroRequest);
+
     //GET-Busca Todos os veículos
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<CarroListResponse> getTodosCarros();
+
     //GET-Busca por Id do veículo
     @GetMapping(value = "/{idVeiculo}")
     @ResponseStatus(code = HttpStatus.OK)
     CarroDetalhadoResponse getCarroPorId(@PathVariable UUID idVeiculo);
+
+    //DELETE-Deleta veículo
+    @DeleteMapping(value = "/{idVeiculo}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletaCarroPorId(@PathVariable UUID idVeiculo);
 }

@@ -38,4 +38,11 @@ public class CarroController implements CarroAPI{
         return carroDetalhado;
     }
 
+    @Override
+    public void deletaCarroPorId(UUID idVeiculo) {
+        log.info("[INICIA] CarroController - deletaCarroPorId");
+        log.info("[IdVeiculo] {}", idVeiculo);
+        log.info("[FINALIZA] CarroController - deletaCarroPorId");
+    }
+
 }
