@@ -3,6 +3,7 @@ package com.teste.veiculos.application.service;
 import com.teste.veiculos.application.api.*;
 import com.teste.veiculos.application.domain.Carro;
 import com.teste.veiculos.application.repository.CarroRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -48,5 +49,14 @@ public class CarroApplicationService implements CarroService{
         carroRepository.deletaCarro(carro);
         log.info("[FINALIZA] CarroApplicationService - deletaCarroPorId");
 
+    }
+
+    @Override
+    public void patchAlteraCarro(UUID idVeiculo, @Valid CarroAlteracaoRequest carroAlteracaoRequest) {
+        log.info("[INICIA] CarroApplicationService - patchAlteraCarro");
+        Carro carro = carroRepository.buscaCarroPorId(idVeiculo);
+        carro.altera(carroAlteracaoRequest);
+        carroRepository.salva(carro);
+        log.info("[FINALIZA] CarroApplicationService - patchAlteraCarro");
     }
 }

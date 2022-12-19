@@ -51,6 +51,7 @@ public class CarroController implements CarroAPI{
     public void patchAlteraCaarro(UUID idVeiculo, @Valid CarroAlteracaoRequest carroAlteracaoRequest) {
         log.info("[INICIA] CarroController - patchAlteraCaarro");
         log.info("[IdVeiculo] {}", idVeiculo);
+        carroService.patchAlteraCarro(idVeiculo, carroAlteracaoRequest);
         log.info("[FINALIZA] CarroController - patchAlteraCaarro");
 
     }
