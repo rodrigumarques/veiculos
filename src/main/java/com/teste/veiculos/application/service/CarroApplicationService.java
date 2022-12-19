@@ -49,14 +49,4 @@ public class CarroApplicationService implements CarroService{
         log.info("[FINALIZA] CarroApplicationService - deletaCarroPorId");
 
     }
-
-    @Override
-    public void patchAtualizaVeiculo(UUID idVeiculo, CarroAlteracaoRequest carroAlteracaoRequest) {
-        log.info("[INICIA] CarroApplicationService - patchAtualizaVeiculo");
-        Carro carro = carroRepository.buscaCarroPorId(idVeiculo);
-        carroRepository.altera(carroAlteracaoRequest);
-        carroRepository.salva(carro);
-        log.info("[FINALIZA] CarroApplicationService - patchAtualizaVeiculo");
-
-    }
 }

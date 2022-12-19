@@ -50,10 +50,4 @@ public class CarroInfraRepository implements CarroRepository {
         log.info("[FINALIZA] CarroInfraRepository - deletaCarro");
     }
 
-    @Override
-    public void altera(CarroAlteracaoRequest carroAlteracaoRequest) {
-        log.info("[INICIA] CarroInfraRepository - altera");
-        log.info("[FINALIZA] CarroInfraRepository - altera");
-
-    }
 }

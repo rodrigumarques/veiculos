@@ -34,5 +34,5 @@ public interface CarroAPI {
     //PATCH-Atualiza dados do veículo
     @PatchMapping(value = "/{idVeiculo}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    void patchAtualizaVeiculo(@PathVariable UUID idVeiculo, @Valid @RequestBody CarroAlteracaoRequest carroAlteracaoRequest);
+    void patchAlteraCaarro(@PathVariable UUID idVeiculo, @Valid @RequestBody CarroAlteracaoRequest carroAlteracaoRequest);
 }

@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 @Value
 public class CarroListResponse {
     private UUID idVeiculo;
+    private String veiculo;
     private String marca;
     private int ano;
     private Boolean vendido;
@@ -20,6 +21,7 @@ public class CarroListResponse {
 
     private CarroListResponse(Carro carro) {
         this.idVeiculo = carro.getIdVeiculo();
+        this.veiculo = carro.getVeiculo();
         this.marca = carro.getMarca();
         this.ano = carro.getAno();
         this.vendido = carro.getVendido();

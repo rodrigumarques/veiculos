@@ -11,5 +11,4 @@ public interface CarroRepository {
     List<Carro> buscaTodosCarros();
     Carro buscaCarroPorId(UUID idVeiculo);
     void deletaCarro(Carro carro);
-    void altera(CarroAlteracaoRequest carroAlteracaoRequest);
 }

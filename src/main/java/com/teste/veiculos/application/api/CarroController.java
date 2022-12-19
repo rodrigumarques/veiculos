@@ -1,6 +1,7 @@
 package com.teste.veiculos.application.api;
 
 import com.teste.veiculos.application.service.CarroService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,11 +48,11 @@ public class CarroController implements CarroAPI{
     }
 
     @Override
-    public void patchAtualizaVeiculo(UUID idVeiculo, CarroAlteracaoRequest carroAlteracaoRequest) {
-        log.info("[INICIA] CarroController - patchAtualizaVeiculo");
+    public void patchAlteraCaarro(UUID idVeiculo, @Valid CarroAlteracaoRequest carroAlteracaoRequest) {
+        log.info("[INICIA] CarroController - patchAlteraCaarro");
         log.info("[IdVeiculo] {}", idVeiculo);
-        carroService.patchAtualizaVeiculo(idVeiculo, carroAlteracaoRequest);
-        log.info("[FINALIZA] CarroController - patchAtualizaVeiculo");
+        log.info("[FINALIZA] CarroController - patchAlteraCaarro");
+
     }
 
 }

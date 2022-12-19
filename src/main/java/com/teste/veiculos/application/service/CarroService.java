@@ -10,5 +10,4 @@ public interface CarroService {
     List<CarroListResponse> buscaTodosCarros();
     CarroDetalhadoResponse buscaCarroPorId(UUID idVeiculo);
     void deletaCarroPorId(UUID idVeiculo);
-    void patchAtualizaVeiculo(UUID idVeiculo, CarroAlteracaoRequest carroAlteracaoRequest);
 }
