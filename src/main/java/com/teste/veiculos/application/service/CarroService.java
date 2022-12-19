@@ -12,4 +12,5 @@ public interface CarroService {
     CarroResponse criaCarro(CarroRequest carroRequest);
     List<CarroListResponse> buscaTodosCarros();
     CarroDetalhadoResponse buscaCarroPorId(UUID idVeiculo);
+    void deletaCarroPorId(UUID idVeiculo);
 }

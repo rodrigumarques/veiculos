@@ -42,6 +42,7 @@ public class CarroController implements CarroAPI{
     public void deletaCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroController - deletaCarroPorId");
         log.info("[IdVeiculo] {}", idVeiculo);
+        carroService.deletaCarroPorId(idVeiculo);
         log.info("[FINALIZA] CarroController - deletaCarroPorId");
     }
 

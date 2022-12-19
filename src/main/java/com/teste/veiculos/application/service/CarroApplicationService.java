@@ -43,4 +43,13 @@ public class CarroApplicationService implements CarroService{
         log.info("[FINALIZA] CarroApplicationService - buscaCarroPorId");
         return new CarroDetalhadoResponse(carro);
     }
+
+    @Override
+    public void deletaCarroPorId(UUID idVeiculo) {
+        log.info("[INICIA] CarroApplicationService - deletaCarroPorId");
+        Carro carro = carroRepository.buscaCarroPorId(idVeiculo);
+      //  carroRepository.deletaCarro(carro);
+        log.info("[FINALIZA] CarroApplicationService - deletaCarroPorId");
+
+    }
 }
