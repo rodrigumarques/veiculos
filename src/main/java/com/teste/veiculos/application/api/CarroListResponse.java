@@ -24,4 +24,5 @@ public class CarroListResponse {
         this.ano = carro.getAno();
         this.vendido = carro.getVendido();
     }
+
 }
