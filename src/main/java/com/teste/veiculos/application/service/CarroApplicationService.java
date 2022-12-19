@@ -1,9 +1,6 @@
 package com.teste.veiculos.application.service;
 
-import com.teste.veiculos.application.api.CarroDetalhadoResponse;
-import com.teste.veiculos.application.api.CarroListResponse;
-import com.teste.veiculos.application.api.CarroRequest;
-import com.teste.veiculos.application.api.CarroResponse;
+import com.teste.veiculos.application.api.*;
 import com.teste.veiculos.application.domain.Carro;
 import com.teste.veiculos.application.repository.CarroRepository;
 import lombok.RequiredArgsConstructor;
@@ -50,6 +47,16 @@ public class CarroApplicationService implements CarroService{
         Carro carro = carroRepository.buscaCarroPorId(idVeiculo);
         carroRepository.deletaCarro(carro);
         log.info("[FINALIZA] CarroApplicationService - deletaCarroPorId");
+
+    }
+
+    @Override
+    public void patchAtualizaVeiculo(UUID idVeiculo, CarroAlteracaoRequest carroAlteracaoRequest) {
+        log.info("[INICIA] CarroApplicationService - patchAtualizaVeiculo");
+        Carro carro = carroRepository.buscaCarroPorId(idVeiculo);
+        carroRepository.altera(carroAlteracaoRequest);
+        carroRepository.salva(carro);
+        log.info("[FINALIZA] CarroApplicationService - patchAtualizaVeiculo");
 
     }
 }

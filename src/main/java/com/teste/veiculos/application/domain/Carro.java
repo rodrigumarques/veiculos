@@ -1,5 +1,6 @@
 package com.teste.veiculos.application.domain;
 
+import com.teste.veiculos.application.api.CarroAlteracaoRequest;
 import com.teste.veiculos.application.api.CarroRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
@@ -39,5 +40,13 @@ public class Carro {
         this.ano = carroRequest.getAno();
         this.vendido = carroRequest.getVendido();
         this.created = LocalDateTime.now();
+    }
+
+    public void altera(CarroAlteracaoRequest carroRequest) {
+        this.veiculo = carroRequest.getVeiculo();
+        this.marca = carroRequest.getMarca();
+        this.ano = carroRequest.getAno();
+        this.vendido = carroRequest.getVendido();
+        this.updated = LocalDateTime.now();
     }
 }

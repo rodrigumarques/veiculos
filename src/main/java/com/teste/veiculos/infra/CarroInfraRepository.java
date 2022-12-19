@@ -1,5 +1,6 @@
 package com.teste.veiculos.infra;
 
+import com.teste.veiculos.application.api.CarroAlteracaoRequest;
 import com.teste.veiculos.application.domain.Carro;
 import com.teste.veiculos.application.repository.CarroRepository;
 import com.teste.veiculos.handler.APIException;
@@ -47,5 +48,12 @@ public class CarroInfraRepository implements CarroRepository {
         log.info("[INICIA] CarroInfraRepository - deletaCarro");
         carroSpringDataJPARepository.delete(carro);
         log.info("[FINALIZA] CarroInfraRepository - deletaCarro");
+    }
+
+    @Override
+    public void altera(CarroAlteracaoRequest carroAlteracaoRequest) {
+        log.info("[INICIA] CarroInfraRepository - altera");
+        log.info("[FINALIZA] CarroInfraRepository - altera");
+
     }
 }
