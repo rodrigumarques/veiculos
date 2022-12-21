@@ -14,6 +14,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CarroController implements CarroAPI{
     private final CarroService carroService;
+
+    //Método de cadastrar o veículo
     @Override
     public CarroResponse postCarro(CarroRequest carroRequest) {
         log.info("[INICIA] CarroController - postCarro");
@@ -22,6 +24,7 @@ public class CarroController implements CarroAPI{
         return carroCriado;
     }
 
+    //Método de listar todos os veículos cadastrados
     @Override
     public List<CarroListResponse> getTodosCarros() {
         log.info("[INICIA] CarroController - getTodosCarros");
@@ -30,6 +33,7 @@ public class CarroController implements CarroAPI{
         return carros;
     }
 
+    //Método de buscar o veículo pelo Id
     @Override
     public CarroDetalhadoResponse getCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroController - getCarroPorId");
@@ -39,6 +43,7 @@ public class CarroController implements CarroAPI{
         return carroDetalhado;
     }
 
+    //Método de deletar o veículo
     @Override
     public void deletaCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroController - deletaCarroPorId");
@@ -47,6 +52,7 @@ public class CarroController implements CarroAPI{
         log.info("[FINALIZA] CarroController - deletaCarroPorId");
     }
 
+    //Método de atualizar os dados de um veículo
     @Override
     public void patchAlteraCaarro(UUID idVeiculo, @Valid CarroAlteracaoRequest carroAlteracaoRequest) {
         log.info("[INICIA] CarroController - patchAlteraCaarro");

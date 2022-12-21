@@ -18,6 +18,7 @@ public class CarroApplicationService implements CarroService{
 
     private final CarroRepository carroRepository;
 
+    //Método de cadastrar o veículo
     @Override
     public CarroResponse criaCarro(CarroRequest carroRequest) {
         log.info("[INICIA] CarroApplicationService - criaCarro");
@@ -26,6 +27,7 @@ public class CarroApplicationService implements CarroService{
         return CarroResponse.builder().idVeiculo(carro.getIdVeiculo()).build();
     }
 
+    //Método de listar todos os veículos cadastrados
     @Override
     public List<CarroListResponse> buscaTodosCarros() {
         log.info("[INICIA] CarroApplicationService - buscaTodosCarros");
@@ -34,6 +36,7 @@ public class CarroApplicationService implements CarroService{
         return CarroListResponse.converte(carros);
     }
 
+    //Método de buscar o veículo pelo Id
     @Override
     public CarroDetalhadoResponse buscaCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroApplicationService - buscaCarroPorId");
@@ -42,6 +45,7 @@ public class CarroApplicationService implements CarroService{
         return new CarroDetalhadoResponse(carro);
     }
 
+    //Método de deletar o veículo
     @Override
     public void deletaCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroApplicationService - deletaCarroPorId");
@@ -51,6 +55,7 @@ public class CarroApplicationService implements CarroService{
 
     }
 
+    //Método de atualizar os dados de um veículo
     @Override
     public void patchAlteraCarro(UUID idVeiculo, @Valid CarroAlteracaoRequest carroAlteracaoRequest) {
         log.info("[INICIA] CarroApplicationService - patchAlteraCarro");

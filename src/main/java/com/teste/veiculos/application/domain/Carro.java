@@ -42,6 +42,7 @@ public class Carro {
         this.created = LocalDateTime.now();
     }
 
+    //Método de atualizar os dados de um veículo
     public void altera(CarroAlteracaoRequest carroRequest) {
         this.veiculo = carroRequest.getVeiculo();
         this.marca = carroRequest.getMarca();

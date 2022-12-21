@@ -18,6 +18,7 @@ import java.util.UUID;
 public class CarroInfraRepository implements CarroRepository {
     private final CarroSpringDataJPARepository carroSpringDataJPARepository;
 
+    //Método de cadastrar o veículo
     @Override
     public Carro salva(Carro carro) {
         log.info("[INICIA] CarroInfraRepository - salva");
@@ -26,6 +27,7 @@ public class CarroInfraRepository implements CarroRepository {
         return carro;
     }
 
+    //Método de listar todos os veículos cadastrados
     @Override
     public List<Carro> buscaTodosCarros() {
         log.info("[INICIA] CarroInfraRepository - buscaTodosCarros");
@@ -34,6 +36,7 @@ public class CarroInfraRepository implements CarroRepository {
         return todosCarros;
     }
 
+    //Método de buscar o veículo pelo Id
     @Override
     public Carro buscaCarroPorId(UUID idVeiculo) {
         log.info("[INICIA] CarroInfraRepository - buscaCarroPorId");
@@ -43,6 +46,7 @@ public class CarroInfraRepository implements CarroRepository {
         return carro;
     }
 
+    //Método de deletar o veículo
     @Override
     public void deletaCarro(Carro carro) {
         log.info("[INICIA] CarroInfraRepository - deletaCarro");
